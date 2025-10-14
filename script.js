@@ -1,0 +1,116 @@
+let words = document.querySelectorAll(".word");
+words.forEach((word) => {
+    let letter = word.textContent.split("");
+    word.textContent = "";
+    letter.forEach((letter) => {
+        let span = document.createElement("span");
+        span.textContent = letter;
+        span.className = "letter";
+        word.append(span);
+    });
+});
+
+let currentWordIndex = 0;
+let maxWordIndex = words.length - 1;
+words[currentWordIndex].style.opacity = "1";
+
+
+let changeText = () => {
+    let currenWord = words[currentWordIndex];
+    let nextWord = currentWordIndex === maxWordIndex ? words[0] : words[currentWordIndex + 1];
+
+    Array.from(currenWord.children).forEach((letter, i) => {
+        setTimeout(() => {
+            letter.className = "letter out";
+        }, i * 80);
+    });
+
+    nextWord.style.opacity = "1";
+    Array.from(nextWord.children).forEach((letter, i) => {
+        letter.className = "letter behind";
+        setTimeout(() => {
+            letter.className = "letter in";
+        }, 340 + i * 80);
+    });
+
+    currentWordIndex = currentWordIndex === maxWordIndex ? 0 : currentWordIndex + 1;
+};
+
+changeText();
+setInterval(changeText, 3000)
+
+
+
+// show more skills button
+  const toggleBtn = document.getElementById("toggleSkillsBtn");
+  const hiddenSkills = document.querySelector(".hidden-skills");
+
+  toggleBtn.addEventListener("click", () => {
+    if (hiddenSkills.style.display === "none") {
+      hiddenSkills.style.display = "block";
+      toggleBtn.textContent = "Show Less";
+    } else {
+      hiddenSkills.style.display = "none";
+      toggleBtn.textContent = "Show More";
+    }
+  });
+
+
+//   circle animation
+const circles = document.querySelectorAll('.circle');
+circles.forEach(elem =>{
+    let dots = elem.getAttribute("data-dots");
+    let marked = elem.getAttribute("data-percent");
+    let percent = Math.floor(dots*marked/100);
+    let points = "";
+    let rotate = 360 / dots;
+
+    for(let i = 0; i < dots; i++){
+        points += `<div class="points" style="--i:${i}; --rot:${rotate}deg"></div>`;
+    }
+    elem.innerHTML = points;
+
+    const pointsMarked = elem.querySelectorAll('.points');
+    for(let i = 0; i < percent; i++){
+        pointsMarked[i].classList.add('marked');
+    }
+});
+
+
+
+
+// mix it up portfolio section
+var mixer = mixitup('.portfolio-gallery')
+
+
+
+// animation on scroll
+const scrollElements = document.querySelectorAll('.fade-in-left, .fade-in-right, .fade-in-up');
+
+const elementInView = (el, offset = 0) => {
+  const elementTop = el.getBoundingClientRect().top;
+  return elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+};
+
+const displayScrollElement = (element) => {
+  element.classList.add('in-view');
+};
+
+const handleScrollAnimation = () => {
+  scrollElements.forEach(el => {
+    if(elementInView(el, 100)) {
+      displayScrollElement(el);
+    }
+  })
+}
+
+window.addEventListener('scroll', () => {
+  handleScrollAnimation();
+});
+window.addEventListener('load', () => {
+  handleScrollAnimation(); // check on load too
+});
+
+window.addEventListener('scroll', () => {
+  handleScrollAnimation();
+});
