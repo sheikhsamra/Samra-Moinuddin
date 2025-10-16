@@ -1,3 +1,23 @@
+// header responsive nav bar 
+let menuIcon = document.querySelector("#menu-icon");
+let navlist = document.querySelector(".navlist");
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle("bx-x"); // change icon to 'X'
+    navlist.classList.toggle("open"); // show menu
+};
+
+// close menu when a link is clicked
+document.querySelectorAll(".navlist a").forEach(link => {
+    link.addEventListener("click", () => {
+        menuIcon.classList.remove("bx-x");
+        navlist.classList.remove("open");
+    });
+});
+
+
+
+
 let words = document.querySelectorAll(".word");
 words.forEach((word) => {
     let letter = word.textContent.split("");
@@ -114,3 +134,23 @@ window.addEventListener('load', () => {
 window.addEventListener('scroll', () => {
   handleScrollAnimation();
 });
+
+
+let menuLi = document.querySelectorAll('header ul li a');
+let sections = document.querySelectorAll('section');
+
+function activeMenu() {
+  let len = sections.length;
+  while (--len && window.scrollY + 97 < sections[len].offsetTop) {}
+  menuLi.forEach(link => link.classList.remove("active"));
+  menuLi[len].classList.add("active");
+}
+
+activeMenu();
+window.addEventListener("scroll", activeMenu);
+
+
+const header = document.querySelector("header");
+window.addEventListener("scroll", function(){
+    header.classList.toggle("sticky", window.scrollY > 50);
+})
