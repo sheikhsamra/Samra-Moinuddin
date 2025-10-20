@@ -237,9 +237,9 @@ section {
     width: 150px;
     background-color: var(--hover-color);
     color: var(--bg-color);
-    font-size: 1rem;
+    font-size: 13px;
     letter-spacing: 1px;
-    font-weight: 600;
+    font-weight: 700;
     transition: .6s;
     box-shadow: var(--neon-box-shadow);
     border-radius: 5px;
@@ -247,6 +247,7 @@ section {
     overflow: hidden;
     z-index: 1;
     border: 2px solid var(--hover-color);
+    
 }
 
 .btn:hover {
@@ -262,16 +263,17 @@ section {
     width: 0;
     height: 100%;
     z-index: -1;
-    transition: .4s;
+    transition: .6s;
 }
 
 .btn:hover::before {
     width: 100%;
 }
 
-.btn:nth-child(2) {
+/* .btn:nth-child(2) {
     background: var(--bg-color);
     color: var(--hover-color);
+    z-index: 1;
 }
 
 .btn:nth-child(2):hover {
@@ -279,8 +281,9 @@ section {
 }
 
 .btn:nth-child(2)::before {
+    
     background: var(--hover-color);
-}
+} */
 
 
 .social-icons {
@@ -742,7 +745,8 @@ section {
 }
 .filtter-buttons .btn:hover{
     color: var(--hover-color);
-    transform: scaleX(1.1);
+    text-shadow: 0 0 10px var(--hover-color);
+    transition: 0.3s ease;
 }
 
 .portfolio-gallery{
