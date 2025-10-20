@@ -11,12 +11,12 @@
 
 :root {
     --text-color: #f5f5f5;
-    --hover-color: #12f7ff;
+    --hover-color: linear-gradient(45deg, #fab6e8, #eb76d1, #f3ea9d);
     --bg-color: #250821;
     --secon-bg-color: #292e33;
     --big-font: 2.5rem;
     --normal-font: 2rem;
-    --neon-box-shadow: 0 0 .5rem #12f7ff;
+    --neon-box-shadow: 0 0 .5rem #fab6e8;
     --h2-font: 3rem;
     --font-neon-text-shadow: 0 0 10px rgba(18, 247, 255, 0.3),
         0 0 20px rgba(18, 247, 255, 0.3),
@@ -83,10 +83,15 @@ header.sticky{
     font-size: 26px;
     font-weight: 700;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-span {
-    color: var(--hover-color);
+.logo span , .home span , .about-content h2 , .services h2, .skills h2, .portfolio h2 , .contact h2, .home h1 {
+  background: linear-gradient(to bottom, #fab6e8, #eb76d1, #f3ea9d); /* upper dark blue to lower light blue */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
 }
 
 .navlist {
@@ -101,18 +106,18 @@ span {
 
 .navlist a:hover {
     color: var(--hover-color);
-    text-shadow: 0 0 10px rgba(18, 247, 255, 0.6),
-        0 0 20px rgba(18, 247, 255, 0.6),
-        0 0 30px rgba(18, 247, 255, 0.6),
-        0 0 40px rgba(18, 247, 255, 0.6),
-        0 0 70px rgba(18, 247, 255, 0.6),
-        0 0 80px rgba(18, 247, 255, 0.6),
-        0 0 100px rgba(18, 247, 255, 0.6),
-        0 0 150px rgba(18, 247, 255, 0.6);
+    text-shadow: 0 0 10px rgba(255, 56, 205, 0.6),
+        0 0 20px rgba(255, 18, 196, 0.6),
+        0 0 30px rgba(255, 18, 196, 0.6),
+        0 0 40px rgba(255, 18, 196, 0.6),
+        0 0 70px rgba(255, 18, 196, 0.6),
+        0 0 80px rgba(255, 18, 196, 0.6),
+        0 0 100px rgba(255, 18, 196, 0.6),
+        0 0 150px rgba(255, 18, 196, 0.6);
 }
 
 .navlist a.active{
-    color: var(--hover-color);
+    color: #f36dcf;
     text-shadow: var(--font-neon-text-shadow);
 }
 
@@ -206,7 +211,7 @@ section {
     font-weight: 600;
     font-size: 1rem;
     font-size: 16px;
-    color: #12f7ff;
+    color: #f284d4;
     margin-bottom: 5px;
 }
 
@@ -219,8 +224,8 @@ section {
 }
 
 .info-box a:hover {
-    color: #12f7ff;
-    border-bottom: 1px solid #12f7ff;
+    color: #ed8ad3;
+    border-bottom: 1px solid #fd7cdb
 }
 
 .btn-box {
@@ -304,7 +309,7 @@ section {
     color: var(--hover-color);
     border: 2px solid var(--hover-color);
     transition: .6s;
-    box-shadow: 0 0 0.3rem #12f7ff;
+    box-shadow: 0 0 0.3rem #fab6e8;
     border-radius: 5px;
     position: relative;
     z-index: 1;
@@ -354,7 +359,7 @@ section {
     width: 500px;
     z-index: -1;
     top: 46%;
-    left: 52%;
+    left: 50%;
     display: block;
 }
 
@@ -462,7 +467,7 @@ section {
 .info-about3 { left: 55%; top: 90%; }
 
 .img-about span {
-  color: var(--hover-color);
+  color: #be52a1;
   font-size: 1rem;
   font-weight: 600;
 }
@@ -744,7 +749,7 @@ section {
 
 }
 .filtter-buttons .btn:hover{
-    color: var(--hover-color);
+    color: #fab6e8;
     text-shadow: 0 0 10px var(--hover-color);
     transition: 0.3s ease;
 }
@@ -764,6 +769,11 @@ section {
     align-items: center;
     border: 2px solid var(--hover-color);
     box-shadow: var(--neon-box-shadow);
+    transition: transform .5s;
+}
+.port-box:hover{
+    transform: translateY(-.7rem);
+
 }
 
 .port-image{
@@ -786,7 +796,7 @@ section {
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: linear-gradient(rgba(0,0,0,.2), #00f7ff);
+    background: linear-gradient(rgba(0,0,0,.2), #fab6e8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -893,9 +903,10 @@ footer a{
     background: var(--hover-color);
     padding: .6rem;
     border-radius: 5px;
+    height: auto;
 }
 footer a i{
-    font-size: 1rem;
+    font-size: 2rem;
     color: var(--secon-bg-color);
 }
 
@@ -1238,9 +1249,6 @@ footer a i{
     font-size: 1.2rem;
 }
 
-
-
-
 .home-content p {
     font-size: 15px;
 }
@@ -1327,3 +1335,5 @@ footer a i{
     }
     
 }
+
+
