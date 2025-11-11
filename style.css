@@ -340,31 +340,21 @@ section {
     width: 100%;
 }
 
-.home-image {
-    position: relative;
+.home .image .img-box img{
+    animation: morph 8s linear infinite;
+    box-shadow: 0px 0px 50px #fab6e8;
+
 }
 
 .img-box {
-    text-align: center;
+    align-items: center;
 }
 
 .img-box img {
-
+    width: 80%;
     max-width: 350%;
     height: auto;
-}
 
-.liquid-shape {
-    position: absolute;
-    width: 500px;
-    z-index: -1;
-    top: 46%;
-    left: 50%;
-    display: block;
-}
-
-.liquid-shape:nth-child(2) {
-    filter: blur(40px);
 }
 
 
@@ -377,21 +367,27 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2em;
+  gap: 100px;
   background: var(--secon-bg-color);
   padding: 100px 8%;
   flex-wrap: wrap; 
 }
 
 .img-about {
-  position: relative;
-  text-align: center;
-  flex: 1 1 350px;
+    position: relative;
+    text-align: center;
+    flex: 1 1 350px;
+}
+.about-img-box{
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px #fab6e8;
 }
 
+
 .img-about img {
-  max-width: 600px;
-  width: 100%;
+  max-width: 350%;
+  width: 60%;
   height: auto;
   border-radius: 10px;
   object-fit: cover;
@@ -462,9 +458,9 @@ section {
 }
 
 /* 🔹 Bubble Positions */
-.info-about1 { left: 10%; top: 60%; }
-.info-about2 { left: 65%; top: 30%; }
-.info-about3 { left: 55%; top: 90%; }
+.info-about1 { left: 20%; top: 60%; }
+.info-about2 { left: 65%; top: 40%; }
+.info-about3 { left: 65%; top: 85%; }
 
 .img-about span {
   color: #be52a1;
@@ -504,9 +500,15 @@ section {
 
 .section-services{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 2rem;
 }
+@media (min-width: 768px) {
+  .section-services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .section-services .services-box{
     flex: 0 0 22rem;
     padding: 2rem 1rem 2rem;
