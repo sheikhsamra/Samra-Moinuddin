@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #250821;
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Breadcrumb container */
+#breadcrumb-container {
+    padding: 15px 10%;
+    font-size: 0.9rem;
+    background: #292e33;
+    color: #fab6e8;
+}
+
+/* Certificates Section */
+.certificates {
+    padding: 100px 10%;
+    background: #250821;
+    text-align: center;
+}
+
+.certificates .main-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(to bottom, #fab6e8, #eb76d1, #f3ea9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+}
+
+.certificates .main-text span {
+    font-size: 0.9rem;
+    color: #f5f5f5;
+}
+
+.certificates-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.certificate-box {
+    background: #292e33;
+    border: 2px solid #fab6e8;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 0 20px #fab6e8;
+    transition: transform 0.3s;
+}
+
+.certificate-box:hover {
+    transform: translateY(-10px);
+}
+
+.certificate-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.certificate-box h3 {
+    font-size: 1.2rem;
+    color: #fab6e8;
+    margin-bottom: 0.5rem;
+}
+
+.certificate-box p {
+    font-size: 0.85rem;
+    color: #f5f5f5;
+}
+
+
+/* Updates for JS Animation */
+.certificate-box {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+}
+
+.certificate-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+

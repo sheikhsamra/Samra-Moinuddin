@@ -1,3 +1,5 @@
+
+
 // header responsive nav bar 
 let menuIcon = document.querySelector("#menu-icon");
 let navlist = document.querySelector(".navlist");
@@ -129,4 +131,31 @@ AOS.init({
   duration: 1000,
   once: true
 });
+
+
+
+// Certificates.html ka content dynamically load karne ke liye
+fetch('../Certificates/certificates.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('certificates-section').innerHTML = data;
+
+    // Scroll animation certificates ke liye yahan bhi chalayenge
+    const boxes = document.querySelectorAll('.certificate-box');
+    window.addEventListener('scroll', () => {
+        const triggerBottom = window.innerHeight / 5 * 4;
+
+        boxes.forEach(box => {
+            const boxTop = box.getBoundingClientRect().top;
+            if(boxTop < triggerBottom){
+                box.classList.add('show');
+            } else {
+                box.classList.remove('show');
+            }
+        });
+    });
+  })
+  .catch(err => console.error('Error loading certificates:', err));
+
+
 

@@ -1,0 +1,24 @@
+.breadcrumb {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  padding: 10px 20px;
+  background-color: #292e33;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 20px 0;
+}
+
+.breadcrumb a {
+  color: #fab6e8;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #fff;
+  font-weight: 600;
+}
